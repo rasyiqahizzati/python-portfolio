@@ -1,0 +1,34 @@
+####
+#  Conditionals
+#  ---------------------------------
+#  Write a conditional statement that checks if a student has passed
+#  - if the mark is 80 or higher then the grade is "A"
+#  - if the mark is lower than 80 and greater than 60 then the grade is "B"
+#  - if the mark is 60 or lower but no lower than 50 then the grade is "C"
+#  - Otherwise the grade is "F"
+####
+
+# Line 12 is to setup the value of grade
+grade = int(input())
+
+# Write your code here
+def check_grade(grade):
+    if grade >= 80:
+        return "A"
+    elif grade < 80 and grade > 60:
+        return "B"
+    elif grade <= 60 and grade >= 50:
+        return "C"
+    else:
+        return "F"
+
+print(f"{grade}: {check_grade(grade)}")
+
+
+
+
+#  #### 
+#  EXPECTED RESULT
+#  ---------------
+#  49: F
+#  ####

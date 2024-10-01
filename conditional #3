@@ -1,0 +1,26 @@
+####
+#  Conditionals
+#  ---------------------------------
+#  Write a conditional statement that checks if a student has passed
+#  - if the grade is less than 50 then return "failed"
+#  - if 50 or higher then return "passed"
+####
+
+# Line 10 is to setup the value of grade
+grade = int(input())
+
+# Write your code here
+def check_grade(grade):
+    if grade < 50:
+        return "failed"
+    else:
+        return "passed"
+
+print(f"{grade}: {check_grade(grade)}")
+
+
+#### 
+#EXPECTED RESULT
+#---------------
+#49: failed
+####

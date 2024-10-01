@@ -1,0 +1,26 @@
+####
+#  Conditionals
+#  ---------------------------------
+#  Write conditional statement to test if a provided number is negative or positive
+#  - if number is less than zero, return the word "negative"
+#  - if number is more or equal to zero, return the word "positive"
+####
+
+# Line 10 is to setup the value of input_number
+input_number = int(input())
+
+# Write your code here
+def check_number(input_number):
+    if input_number < 0:
+        return "negative"
+    else:
+        return "positive"
+        
+print(f"{input_number} is {check_number(input_number)}")
+
+
+#### 
+#  EXPECTED RESULT
+#  ---------------
+#  0 is positive
+####

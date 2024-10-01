@@ -1,0 +1,15 @@
+# In this exercise, let's try to create a function that calculate the area of a triangle
+# Formula for calculating area of triangle: Area = (base * height)/2
+
+# Step 1: Create a function that takes 2 parameters - base and height
+def calculateTriangleArea(base, height):
+    return (base * height)/2
+
+
+# Step 2: Call the triangle area function to calculate the area of a triangle with base of 7 and height of 4
+# Store the result in a variable named `area`
+area = calculateTriangleArea(7, 4)
+
+
+# Step 3: Print out the area
+print(area)

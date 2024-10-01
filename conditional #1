@@ -1,0 +1,28 @@
+####
+#  Conditionals
+#  ---------------------------------
+#  Add an if statement to check Daniel's role in a CYF class.
+#  If Daniel is a mentor, print out "Hi, I'm Daniel, I'm a mentor."
+#  If Daniel is a student, print out "Hi, I'm Daniel, I'm a student."
+####
+
+# Line 10-11 is to setup the value of user and role
+user = input()
+role = input()
+
+# Write your code here
+def check_role(user, role):
+    if role == "mentor" :
+        return f"Hi, I'm {user}, I'm a mentor."
+    elif role == "student":
+        return f"Hi, I'm {user}, I'm a student."
+    else:
+        return f"Role not recognized."
+        
+print(check_role(user,role))
+
+########
+# EXPECTED RESULT FORMAT
+# ---------------
+# Hi, I'm Daniel, I'm a mentor.
+#######

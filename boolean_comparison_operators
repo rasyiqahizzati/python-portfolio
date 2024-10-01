@@ -1,0 +1,30 @@
+####
+#  BOOLEAN WITH COMPARISON OPERATORS
+#  ---------------------------------
+#  Using comparison operators complete the unfinished statements.
+#  The variables should have values that match the expected results.
+####
+
+studentCount = 16
+mentorCount = 9
+# finish this statement using comparison operators, the value should be a boolean
+moreStudentsThanMentors = studentCount > mentorCount
+
+roomMaxCapacity = 25
+# finish this statement using comparison operators, the value should be a boolean
+enoughSpaceInRoom = roomMaxCapacity >= (studentCount + mentorCount)
+
+personA = "Daniel"
+personB = "Irina"
+# finish this statement using comparison operators, the value should be a boolean
+sameName = personA == personB
+
+### 
+#  DO NOT EDIT BELOW THIS LINE
+#  ---------------------------
+print("Are there more students than mentors?", moreStudentsThanMentors)
+print(
+  "Is there enough space in the room for all students and mentors?",
+  enoughSpaceInRoom
+)
+print("Do person A and person B have the the same name?", sameName)

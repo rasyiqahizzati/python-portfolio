@@ -1,0 +1,48 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Sample data
+data = {
+    'Task': ['Task A', 'Task B', 'Task C', 'Milestone 1', 'Task D', 'Milestone 2'],
+    'Start': ['2024-08-01', '2024-08-05', '2024-08-10', '2024-08-15', '2024-08-20', '2024-08-25'],
+    'End': ['2024-08-05', '2024-08-10', '2024-08-15', '2024-08-15', '2024-08-25', '2024-08-25'],
+    'Annual Leave': ['2024-08-03', '2024-08-07', '2024-08-12', None, '2024-08-22', None]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+df['Start'] = pd.to_datetime(df['Start'])
+df['End'] = pd.to_datetime(df['End'])
+df['Annual Leave'] = pd.to_datetime(df['Annual Leave'])
+
+# Define a color palette
+colors = sns.color_palette("husl", len(df['Task']))
+
+# Plotting
+plt.figure(figsize=(12, 8))
+sns.set(style="whitegrid")
+
+# Create a bar plot for tasks with different colors
+for i, task in enumerate(df['Task']):
+    plt.barh(task, (df['End'][i] - df['Start'][i]).days, left=df['Start'][i], color=colors[i])
+
+# Highlight milestones
+milestones = df[df['Task'].str.contains('Milestone')]
+for index, row in milestones.iterrows():
+    plt.plot(row['Start'], row['Task'], 'ro')
+
+# Highlight weekends
+for i in range((df['Start'].min() - pd.to_datetime('2024-08-01')).days, (df['End'].max() - pd.to_datetime('2024-08-01')).days + 1):
+    date = pd.to_datetime('2024-08-01') + pd.Timedelta(days=i)
+    if date.weekday() >= 5:  # Saturday and Sunday
+        plt.axvspan(date, date + pd.Timedelta(days=1), color='lightgrey', alpha=0.5)
+
+# Highlight annual leave with stars
+for i, leave in enumerate(df['Annual Leave'].dropna()):
+    plt.plot(leave, df['Task'][i], 'r*', markersize=10)
+
+plt.xlabel('Date')
+plt.ylabel('Task')
+plt.title('Gantt Chart with Milestones, Weekends, and Annual Leave')
+plt.show()

@@ -1,0 +1,59 @@
+import pandas as pd 
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('data.csv')
+
+df.head(3)
+
+#plot() - Line Plot
+
+df.plot()
+
+# plot() - Scatter Plot
+
+df.plot(kind = 'scatter',
+        x ='Duration', y = 'Calories')
+
+# or
+
+df.plot.scatter(x='Duration', y = 'Pulse')
+
+# plot() - Area Plot
+
+df.plot.area()
+
+#plot() - Bar Chart
+
+df.plot.bar()
+
+#or
+
+df.plot.bar(stacked=True)
+
+# or - horizontal bar
+
+df.plot.barh()
+
+#plot() - Box plot
+
+df.plot.box()
+
+#plot() - Hexagonal binning plot
+
+df.plot.hexbin(x = 'Maxpulse', y = 'Calories',
+               gridsize = 18)
+
+# plot() - histogram plot
+
+df.plot.hist()
+
+# plot() - Density Estimate plot
+
+df.plot.kde()
+
+#plot() - Pie plot
+df.plot.pie(y = 'Duration', autopct = '%1.1f%%')
+
+#Save the plot as an image
+df.plot()
+plt.savefig('line.plot.png')

@@ -1,0 +1,12 @@
+# Practice time
+# Step 1: Create a function that would always divide the inputNumber by 5 and return the answer
+def divideBy5(inputNumber):
+    return inputNumber/5
+
+
+# Step 2: Call the function with input value of 100 and store the calculation result in a variable named `answer`
+answer = divideBy5(100)
+
+
+# Step 3: Print out the value of `answer`
+print(answer)

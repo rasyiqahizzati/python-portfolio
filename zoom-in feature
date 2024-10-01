@@ -1,0 +1,15 @@
+# 1) Create the usual plot
+ax.plot(x,y)
+
+# 2) Define Inset Axes
+axin = ax.inset_axes()
+
+# 3) Recreate plot with axin
+axin.plot(x,y)
+
+# 4) Focus on region of interest
+axin.set_xlim(-12,12)
+axin.set_ylim(7,8)
+
+# 5) Embed axin
+ax.indicate_insert_zoom(axin)

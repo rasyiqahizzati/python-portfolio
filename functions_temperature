@@ -1,0 +1,10 @@
+# This is a function that convert a temperature in Fahrenheit into Degree Celsius
+# It takes in a Degree Fahrenheit as a number and return with the equivalent Degree Celsius
+def convertFahrenheitToCelsius(tempInFahrenheit):
+	return (tempInFahrenheit - 32) * 5 / 9
+
+
+# TODO: use the convertFahrenheitToCelsius function to convert 113 Degree Fahrenheit into Degree Celsius
+# And then print out the temperature in Degree Celsius
+tempInCelsius = convertFahrenheitToCelsius(113)
+print(tempInCelsius)

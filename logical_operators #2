@@ -1,0 +1,25 @@
+####
+#  Logical Operators
+#  ---------------------------------
+#  Write a conditional statement that would detect if the input is between 5-10
+#  Update the code so that you get the expected result.
+####
+
+# Line 9 is to setup the input_number
+input_number = int(input())
+
+# Write your code here
+def check_range(input_number):
+    if input_number >= 5 and input_number <= 10:
+        return True
+    else:
+        return False
+
+print(f"Is {input_number} in the range 5-10? {check_range(input_number)}")
+
+
+#### 
+#  EXPECTED RESULT
+#  ---------------
+#  Is 10 in the range 5-10? true
+####
